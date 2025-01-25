@@ -3,7 +3,7 @@ import userData from "../datasets/userData";
 
 const ModeratorDashBoard = () => {
   return (
-    <div className="bg-black text-center items-center text-white h-full w-full m-4">
+    <div className="bg-black text-center items-center text-white h-full w-full m-2">
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg m-4">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -40,12 +40,14 @@ const ModeratorDashBoard = () => {
                 <td className="px-6 py-4">{user.yearOfJoining}</td>
                 <td className="px-6 py-4">{user.jobRole}</td>
                 <td className="px-6 py-4">{user.salary}</td>
-                <a
-                  href="#"
-                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >
-                  Edit
-                </a>
+                <td className="px-6 py-4">
+                  <a
+                    href="#"
+                    className="font-medium text-blue-600  dark:text-blue-500 hover:underline"
+                  >
+                    Edit
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>

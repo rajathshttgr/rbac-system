@@ -3,7 +3,7 @@ import userData from "../datasets/userData";
 
 const UserDashBoard = () => {
   return (
-    <div className="bg-black text-center items-center text-white h-full w-full m-4">
+    <div className="justify-center bg-black text-center items-center text-white h-full w-full m-2">
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg m-4">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
