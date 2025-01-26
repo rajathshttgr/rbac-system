@@ -12,6 +12,7 @@ const AuthForm = ({ currState = true }) => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isvisible, setIsvisible] = useState(false);
 
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
@@ -36,6 +37,8 @@ const AuthForm = ({ currState = true }) => {
           password,
           role,
         });
+        console.log(response);
+
         setIsLogin(true);
       }
     } catch (err) {
@@ -58,6 +61,11 @@ const AuthForm = ({ currState = true }) => {
   const handleToggle = (event) => {
     event.preventDefault(); // Prevent default behavior of <a> tag
     setIsLogin((prevState) => !prevState);
+  };
+
+  const handleVisiblity = () => {
+    let prev = isvisible;
+    setIsvisible(!prev);
   };
 
   return loading ? (
@@ -104,18 +112,26 @@ const AuthForm = ({ currState = true }) => {
                 required
               />
             </div>
-            <div className="mt-5">
+            <div className="relative mt-5">
               <label htmlFor="password" className="text-sm font-semibold">
                 Password
               </label>
               <input
-                type="password"
+                type={isvisible ? "text" : "password"}
                 id="password"
                 className="w-full p-2 mt-1 border rounded-lg"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+              {password && (
+                <div
+                  className="absolute top-0 right-0 flex items-center h-full pt-6 px-3 text-gray-300 cursor-pointer text-sm"
+                  onClick={handleVisiblity}
+                >
+                  {isvisible ? "( )" : "(◕)"}
+                </div>
+              )}
             </div>
             {!isLogin && (
               <div className="mt-5">
