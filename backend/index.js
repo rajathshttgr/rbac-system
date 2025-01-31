@@ -15,6 +15,9 @@ app.use(cors());
 
 //Routes
 app.use("/api/auth", authRoutes);
+app.use("/", (req, res) => {
+  res.send("Welcome to the RBAC system");
+});
 
 //start the server
 const PORT = process.env.PORT || 7002;
